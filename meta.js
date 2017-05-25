@@ -40,9 +40,18 @@ module.exports = {
         }
       ]
     },
+    "port": {
+      "type": "string",
+      "message": "What port for localhost (http://localhost:8080) do you want to use? ",
+      "default": 8080
+    },
     "router": {
       "type": "confirm",
       "message": "Install vue-router?"
+    },
+    "vuex": {
+      "type": "confirm",
+      "message": "Install vuex?"
     },
     "lint": {
       "type": "confirm",
@@ -54,14 +63,9 @@ module.exports = {
       "message": "Pick an ESLint preset",
       "choices": [
         {
-          "name": "Standard (https://github.com/feross/standard)",
+          "name": "EAHT Standard",
           "value": "standard",
           "short": "Standard"
-        },
-        {
-          "name": "Airbnb (https://github.com/airbnb/javascript)",
-          "value": "airbnb",
-          "short": "Airbnb"
         },
         {
           "name": "none (configure it yourself)",
