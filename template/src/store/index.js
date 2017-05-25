@@ -8,19 +8,18 @@ const state = {
   doSomething: false
 };
 
-const getters = {
-};
+const getters = {};
 
 const mutations = {
   DO_SOMETHING(state) {
     state.doSomething = !state.doSomething;
-  },
+  }
 };
 
 const actions = {
   doSomething({ commit }) {
     commit('DO_SOMETHING');
-  },
+  }
 };
 
 const store = new Vuex.Store({

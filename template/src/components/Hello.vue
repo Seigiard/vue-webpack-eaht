@@ -27,18 +27,18 @@
 <script>
 export default {
   name: 'hello',
-  data () {
+  data() {
     return {
-      msg: 'Welcome to Your Vue.js App',
+      msg: 'Welcome to Your Vue.js App'
     };
   }{{#vuex}},
   computed: {
-    doSomething () {
-      return this.$store.doSomething;
+    doSomething() {
+      return this.$store.state.doSomething;
     }
   },
   methods: {
-    onClick () {
+    onClick() {
       this.$store.dispatch('doSomething');
     }
   }{{/vuex}}

@@ -12,13 +12,12 @@
 <script>
 {{#unless router}}
 import Hello from './components/Hello';
-
 {{/unless}}
 export default {
-  name: 'app'{{#router}},
+  name: 'app'{{#unless router}},
   components: {
-    Hello,
-  }{{/router}}
+    Hello
+  }{{/unless}}
 };
 </script>
 
