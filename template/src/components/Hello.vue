@@ -17,18 +17,32 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
+    {{#vuex}}
+    <button v-on:click="onClick">Click Me!</button>
+    <div v-if="doSomething">Vuex works!</div>
+    {{/vuex}}
   </div>
 </template>
 
 <script>
 export default {
   name: 'hello',
-  data{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}() {
+  data () {
     return {
-      msg: 'Welcome to Your Vue.js App'{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-    }{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-  }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-}{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+      msg: 'Welcome to Your Vue.js App',
+    };
+  }{{#vuex}},
+  computed: {
+    doSomething () {
+      return this.$store.doSomething;
+    }
+  },
+  methods: {
+    onClick () {
+      this.$store.dispatch('doSomething');
+    }
+  }{{/vuex}}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
