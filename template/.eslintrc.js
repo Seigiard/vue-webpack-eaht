@@ -12,7 +12,9 @@ module.exports = {
     browser: true,
   },
   {{#if_eq lintConfig "standard"}}
-  extends: 'eaht',
+  extends: [
+    'eaht'
+  ],
   {{/if_eq}}
   // required to lint *.vue files
   plugins: [
