@@ -12,28 +12,15 @@ module.exports = {
     browser: true,
   },
   {{#if_eq lintConfig "standard"}}
-  extends: 'prettier',
+  extends: 'eaht',
   {{/if_eq}}
   // required to lint *.vue files
   plugins: [
     'html',
     'vue'
-    {{#if_eq lintConfig "standard"}},
-    'prettier'
-    {{/if_eq}}
   ],
   // add your custom rules here
   'rules': {
-    {{#if_eq lintConfig "standard"}}
-    "prettier/prettier": ["error", {
-      "tabWidth": 2,
-      "semi": true,
-      "singleQuote": true,
-      "trailingComma": "none",
-      "bracketSpacing": true,
-      "jsxBracketSameLine": true
-    }],
-    {{/if_eq}}
     'vue/jsx-uses-vars': 2,
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
